@@ -116,6 +116,55 @@
     line-height: 1.4;
   }
 
+    /* Project cards */
+.project-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 16px;
+}
+
+.project-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+
+  /* animation */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* stagger animation */
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+.project-card:nth-child(4) { animation-delay: 0.4s; }
+
+.project-card strong {
+  display: block;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+/* hover effect */
+.project-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+  border-color: var(--accent-color);
+  transition: all 0.3s ease;
+}
+
+/* animation keyframes */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
   </style>
 </head>
 
@@ -153,34 +202,35 @@
   <div class="Project">
     <h3>Projects:</h3>
 
-    <ul class="project-list">
-      <li>
-        <strong>Heaven Place Resort (Booking Management System) - Front-End Developer</strong>
-        <p class="project-desc">
-          Served as the front-end developer for a booking management system, using OOP to build a responsive UI.
-        </p>
-      </li>
-
-      <li>
-        <strong>Sloth Programmer Game in NetBeans - Front-End Support/ Music Engineer</strong>
-        <p class="project-desc">
-         Developed a 2D game in Java using NetBeans, handling both game logic and user interface. Implemented gameplay mechanics, scoring systems, and interactive elements while managing data storage and ensuring smooth performance.
-        </p>
-      </li>
-
-      <li>
-        <strong>Fruit Catcher - Full-Stack Developer</strong>
-          <p class="project-desc">
-            Developed an interactive arcade-style game in Unity, handling both front-end gameplay design and back-end logic. Implemented player controls, scoring and difficulty progression, collision systems, and smooth object spawning. Designed UI elements, optimized performance for responsive gameplay.        </p>
-      </li>
-
-       <li>
-        <strong>Pusa-kal: Ming’s time traveling adventure - Front-End Developer</strong>
-          <p class="project-desc">
-            Developed core gameplay systems, designed 3D environments, created interactive puzzles, and implemented movement, UI, and progression features. Optimized the game for mobile and contributed to both front-end game design and back-end data handling.        </p>
-      </li>
-    </ul>
-
+     <ul class="project-list">
+    <li class="project-card">
+      <strong>Heaven Place Resort (Booking Management System) - Front-End Developer</strong>
+      <p class="project-desc">
+        Served as the front-end developer for a booking management system, using OOP to build a responsive UI.
+      </p>
+    </li>
+  
+    <li class="project-card">
+      <strong>Sloth Programmer Game in NetBeans - Front-End Support / Music Engineer</strong>
+      <p class="project-desc">
+        Developed a 2D game in Java using NetBeans, handling both game logic and user interface.
+      </p>
+    </li>
+  
+    <li class="project-card">
+      <strong>Fruit Catcher - Full-Stack Developer</strong>
+      <p class="project-desc">
+        Developed an interactive arcade-style game in Unity with gameplay mechanics, scoring, and UI systems.
+      </p>
+    </li>
+  
+    <li class="project-card">
+      <strong>Pusa-kal: Ming’s Time Traveling Adventure - Front-End Developer</strong>
+      <p class="project-desc">
+        Developed core gameplay systems, 3D environments, puzzles, UI, and mobile optimization.
+      </p>
+    </li>
+  </ul>
   </div>
 </div>
 </body>
